@@ -1,9 +1,9 @@
 # xpub
 
 ## Responsive HTML Samples   
-As part of the upcoming release for XPub, GPO will roll out a new, responsive HTML format for Congressional Bills, Resolutions, and Amendments, as well as Public Laws and the Statutes at Large. This format replaces plain ASCII text file that are currently on govinfo and that were created as a by-product of the Microcomp process. The format is optimized for any device, including mobile devices, tablets, and traditional desktops/laptops, and uses modern, easy to read fonts that are optimized for screen usage and search engines. The responsive HTML files also include metadata in HTML tags for re-use by data providers. 
+As part of the upcoming release for XPub, GPO will roll out a new, responsive HTML format for Congressional Bills, Resolutions, and Amendments, as well as Public Laws and the Statutes at Large. This format replaces plain ASCII text file that are currently on govinfo and that were created as a by-product of the Microcomp process. The format is optimized for any device, including mobile devices, tablets, and traditional desktops/laptops, and it uses modern, easy to read fonts that are optimized for screen usage and search engines. The responsive HTML files also include metadata in HTML tags for re-use by data providers. 
 
-GPO is making a limited set of samples available via its public GitHub for public comment. 
+GPO is making a set of sample HTML and CSS files available for [public comment](https://github.com/usgpo/xpub/issues/new).
 
 ## Background
 
