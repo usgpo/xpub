@@ -1,0 +1,1388 @@
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details{display:block}summary{display:list-item}template{display:none}[hidden]{display:none}
+
+/*! end normalize css code */
+
+/* --------------------------------------------------- */
+/*  MAIN CSS FILE FOR RESPONSIVE HTML5 FOR BILLS       */
+/* --------------------------------------------------- */
+/* Version:  .5                                        */
+/* Last Updated:  02-17-2021                           */
+/* Developed by:  GPO                                  */
+/* --------------------------------------------------- */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+main {
+    padding-bottom: 2em;
+}
+
+/* -------------------------------------------------- */
+/* Fonts and sections                                 */
+/* -------------------------------------------------- */
+
+h1 {
+    padding-top: 0;
+    padding-bottom: 0.25em;
+    font-size: 3em;
+    border-bottom: 2px solid #ebebeb;
+}
+
+h2 {
+    font-size: 2.25em;
+    margin-bottom: 0;
+}
+
+h3 {
+    font-size: 1.5em;
+    margin-top: 1em;
+    margin-bottom: 0.33em;
+}
+
+h4 {
+    font-size: 1.25em;
+    margin-top: 1em;
+    margin-bottom: 0.33em;
+}
+
+h5 {
+    display: block;
+    font-size: 1em;
+    font-weight: normal;
+    line-height: 1.5em;
+    margin-top: 1em;
+    margin-bottom: 0.33em;
+}
+
+p {
+    display: block;
+    font-size: 1em;
+    line-height: 1.5em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+header {
+    padding-bottom: 2em;
+}
+
+footer {
+    padding-bottom: 3em;
+}
+
+footer p {
+    line-height: 1em;
+}
+
+section {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+section ul, ol {
+    line-height: 1.5em;
+    padding-top: 0.5em;
+    padding-left: 5%;
+}
+
+section li {
+    padding-top: 1em;
+}
+
+/* Delete/Inserted Text */
+ins, del {
+    text-decoration: none;
+}
+
+ins::before,
+ins::after,
+del::before,
+del::after {
+  clip-path: inset(100%);
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+ins::before {
+  content: " [insertion start] ";
+}
+
+ins::after {
+  content: " [insertion end] ";
+}
+
+del::before {
+    content: " [deletion start] ";
+  }
+  
+del::after {
+content: " [deletion end] ";
+}
+
+/* -------------------------------------------------- */
+/* Table of contents                                  */
+/* -------------------------------------------------- */
+
+button#jump-menu {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    width: 525px;
+    border: none;
+    background-color: #ebebeb;
+}
+
+button#jump-menu p {
+    padding-left: 0.5em;
+}
+
+button:focus {
+    outline: .15em solid black;
+    outline-offset: 0;
+}
+
+.jump-menu__icon {
+    font-size: 2em;
+    font-weight: bold;
+    margin-right: 1em;
+}
+
+#jump-menu__img {
+    position: relative;    
+    float: right;
+    margin: 1.2em 2em 1em 0;
+}
+
+.legislationNav__inner li {
+    padding-bottom: 1em;
+    padding-left: 1em;
+}
+
+#legislationNav__inner-ul {
+    position: absolute;
+    left: -9999px;
+    width: 525px;
+    padding: 1em;
+    list-style: none;
+    margin: 0 4.25em 1em 0;
+}
+
+#legislationNav__inner-ul li ul {
+    padding: 1em 0 0 1em;
+    list-style: none;
+    margin: 0;
+}
+
+.legislationNav__inner p {
+    display: inline-block;
+}
+
+@media only screen and (max-width : 768px) {
+    .legislationNav__inner li { padding-left: 0; }
+    #legislationNav__inner-ul, button#jump-menu {
+        width: 100%;
+    }
+}
+
+.open {
+    position: relative !important;
+    left: 0 !important;
+}
+
+/* -------------------------------------------------- */
+/* Back to Top button                                 */
+/* -------------------------------------------------- */
+
+.toTop {
+    bottom: 20px;
+    right: 10%;
+    position: fixed;
+    border-radius: 3px;
+    background: #6a6a6a;
+    width: 40px;
+    font-size: 2em;
+    cursor: pointer;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0 10px 0;
+    z-index: 14;
+    transform: rotate(90deg);
+}
+
+.fadeOut--fast {
+  opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease-out, visibility 0.5s ease-in-out;
+}
+
+.fadeIn--fast {
+    transition: opacity 0.25s ease-in-out, visibility 0.5s ease-in-out;
+    opacity: 0.8;
+    visibility: visible;
+}
+
+/* -------------------------------------------------- */
+/* Content Body                                */
+/* -------------------------------------------------- */
+
+.content {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.frontMatterIntro {
+    height: 20%;
+    padding-top: 3em;
+}
+
+.frontMatterIntro p {
+    margin: 0;
+}
+
+.introBillTitle {
+    margin-top: 0;
+}
+
+.introMarginNote {
+    border-bottom: 2px solid #d7d7d7;
+    margin-bottom: 0;
+}
+
+.footer-inner {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.legisHistory {
+    display: block;
+    border-top: 2px solid #d7d7d7;
+}
+
+.legisHistory {
+    display: block;
+    padding-top: 2em;
+}
+
+.legisAction {
+    display: block;
+    text-indent: 2em;
+}
+
+.marginNote--before {
+    display: inline-block;
+}
+
+aside.marginNote {
+    position: relative;    
+    float: right;
+    clear: right;
+    margin-right: -10%;
+    width: 40%;
+    font-style: italic;
+    margin-bottom: 0;
+    vertical-align: baseline;
+}
+
+/* ------------------------------------------------------------------------- */
+/* table-like formatting                                                          */
+/* ------------------------------------------------------------------------- */
+
+.mainContent {
+    border-style: none;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+.thead {
+    display: table-header-group
+}
+.tbody {
+    display: table-row-group
+}
+.tfoot {
+    display: table-footer-group
+}
+.col {
+    display: table-column
+}
+.colgroup {
+    display: table-column-group
+}
+.caption {
+    display: table-caption
+}
+
+.legislation {
+    padding: 0.25em;
+}
+
+.legislation-title {
+    padding: 0.25em;
+}
+
+.legislation-title h2 {
+    margin-top: 0.25em;
+}
+
+.legislationTOC {
+    display: block;
+    font-weight: normal;
+}
+
+hr {
+    display: block;
+    border-top: 1px solid #d7d7d7;
+}
+
+linebreak {
+    display: none;
+}
+
+/*  MEDIA QUERIES */
+
+@media only screen and (max-width : 425px) {
+
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width : 426px) {
+
+}
+
+@media only screen and (max-width : 768px) {
+    .mainContent {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .footer-inner {
+        width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    aside.marginNote {
+        border: 2px solid #ebebeb;
+        margin-right: 0;
+        margin-left: 3.5%;
+    }
+    aside.marginNote p {
+        margin: 10px;
+    }
+}
+
+/*  @media only screen and (min-width: 940px) {
+    section ol, ul {
+        width: 90%;
+    }
+} */
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width : 768px) {
+
+/*  use a smaller portion of the screen */
+    .content {
+        width: 60%;
+        max-width: 700px;
+    }
+
+    /*  footer {
+        width: 100%;
+    }
+
+    section > p {
+        width: 60%;
+    }
+
+    section .quoted-block p {
+        width: 50%;
+    }
+
+    section ol p, ul p {
+        width: 100%;
+    }
+
+    section h2, h3, h4 {
+        width: 68%;
+    } */
+
+}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width : 992px) {
+
+    div.frontMatterHeader {
+        display: block;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width : 1200px) {
+
+    div.frontMatterHeader {
+        display: block;
+    }
+}
+
+/*  Classes brought over from legacy billtohtml */
+
+a {
+    color: blue;
+    text-decoration: none;
+}
+.lbexAllcap {
+    text-transform: uppercase;
+}
+.lbexMediumcap {
+    font-variant: small-caps;
+    font-weight: bold;
+    font-size: 1em;
+}
+.lbexSmallcap {
+    font-variant: small-caps;
+    font-weight: bold;
+}
+.lbexAllcapnormal {
+    font-size: 0.8em;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+.lbexSimplecap {
+    font-variant: small-caps;
+}
+.lbexSimplecapEx {
+    font-variant: small-caps;
+    text-transform: uppercase;
+}
+.lbexSimpleCapNormal {
+    font-variant: small-caps;
+    text-transform: uppercase;
+    font-weight: normal;
+}
+.lbexInitialcap {
+    word-spacing: 2pt;
+    letter-spacing: 1pt;
+    font-variant: small-caps;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+.lbexHang {
+    text-indent: -2em;
+}
+.lbexHangWithMargin {
+    text-indent: -2em;
+    margin-left: 2em
+}
+.lbexHangSmall
+{
+    text-indent: -2em;
+    font-size: 0.7em;
+}
+
+.lbexHangSmalllWithMargin
+{
+    text-indent: -2em;
+    font-size: 0.8em;
+    margin-left: 2em;
+    line-height: 1em;
+}
+.lbexIndent {
+    text-indent: 2em;
+}
+.lbexNoMargin {
+    margin-left: 0em;
+}
+.lbexIndentSubsection {
+    text-indent: 2em;
+    margin-left: 0em;
+    text-align: left;
+}
+.lbexIndentParagraph {
+    text-indent: 2em;
+    margin-left: 2em;
+    text-align: left;
+}
+.lbexIndentSubpar {
+    text-indent: 2em;
+    margin-left: 4em;
+    text-align: left;
+}
+.lbexNonIndentSubpar {
+    text-indent: 0em;
+    margin-left: 4em;
+    text-align: left;
+}
+.lbexIndentClause {
+    text-indent: 2em;
+    margin-left: 6em;
+    text-align: left;
+}
+.lbexNonIndentClause {
+    text-indent: 0em;
+    margin-left: 6em;
+    text-align: left;
+}
+.lbexIndentSubclause {
+    text-indent: 2em;
+    margin-left: 8em;
+    text-align: left;
+}
+.lbexNonIndentSubclause {
+    text-indent: 0em;
+    margin-left: 8em;
+    text-align: left;
+}
+.lbexIndentItem {
+    text-indent: 2em;
+    margin-left: 10em;
+    text-align: left;
+}
+.lbexIndentSubItem {
+    text-indent: 2em;
+    margin-left: 12em;
+    text-align: left;
+}
+.lbexNonIndentItem {
+    text-indent: 0em;
+    margin-left: 10em;
+    text-align: left;
+}
+.lbexNonIndentSubItem {
+    text-indent: 0em;
+    margin-left: 12em;
+    text-align: left;
+}
+.lbexIndentFour {
+    text-indent: 4em;
+}
+.lbexIndentFive {
+    text-indent: 5em;
+}
+.lbexNonIndentSubsection {
+    text-indent: 0em;
+    margin-left: 0em;
+    text-align: left;
+}
+.lbexNonIndentParagraph {
+    text-indent: 0em;
+    margin-left: 2em;
+    /*text-align:left;*/
+}
+.lbexIndentZero {
+    text-indent: 0;
+}
+.lbexLegisNum {
+    font-size: 2.25em;
+    font-weight: bold;
+}
+.lbexLegisNumAvg {
+    font-size: 2.25em;
+    font-weight: bold;
+    letter-spacing: -2pt;
+}
+.lbexLegisNumLrg {
+    font-size: 2.25em;
+    font-weight: bold;
+    letter-spacing: -3pt;
+}
+.lbexLegisNumSml {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+.lbexLegisType {
+    font-size: 1.9em;
+}
+.lbexChamber {
+    font-size: 0.9em;
+}
+.lbexChamberEngrHouse {
+    font-size: 1.25em;
+    font-weight: bold;
+    font-style: italic;
+}
+.lbexBldItalic {
+    font-weight: bold;
+    font-style: italic;
+}
+.lbexCongressEnrolled {
+    font-size: 1.9em;
+    font-weight: bold;
+}
+.lbexlegisEnrolled {
+    font-size: 1.9em;
+    font-weight: bold;
+    word-spacing: 2pt;
+    letter-spacing: 1pt;
+    font-variant: normal;
+    text-transform: capitalize;
+}
+.lbexLegisEngrossed {
+    font-size: 1.9em;
+    font-weight: bold;
+    word-spacing: 2pt;
+    letter-spacing: 1pt;
+    text-transform: capitalize;
+}
+.lbexSessionEnrolled {
+    font-size: 0.75em;
+    font-weight: bold;
+}
+.lbexTextNormalBold {
+    font-size: 0.75em;
+    font-weight: bold;
+    text-transform: none;
+    font-variant: normal;
+}
+.lbexDateEnrolled {
+    font-size: 0.675em;
+    font-style: italic;
+    font-weight: bold;
+}
+.lbexThinSpace {
+    word-spacing: -5pt;
+}
+.lbexNSpace {
+    word-spacing: -1pt;
+}
+.lbexOmmitedTextSpace {
+    word-spacing: 60pt;
+}
+.lbexInitialCapArchaic {
+    font-variant: normal;
+    text-transform: capitalize;
+}
+.lbexSectionlevelItalicOLCBold {
+    font-size: 0.9em;
+    font-weight: bold;
+    font-style: italic;
+}
+.lbexSectionlevelOLC {
+    font-size: 0.75em;
+    font-weight: bold;
+}
+.lbexSectionlevelOLCBold {
+    font-size: 1.15em;
+    font-weight: bold;
+}
+.lbexTitleLevelOLC {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+.lbexSubTitleLevelOLC {
+    word-spacing: 2pt;
+    letter-spacing: 1pt;
+    font-variant: normal;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+.lbexSubTitleLevelOLCBold {
+    word-spacing: 2pt;
+    letter-spacing: 1pt;
+    font-variant: normal;
+    font-size: 1.25em;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+.lbexChapterLevelOLC {
+    font-size: 1em;
+    font-weight: bold;
+}
+.lbexChapterLevelOLCBold {
+    font-size: 1.25em;
+    font-weight: bold;
+}
+.lbexSubChapterLevelOLC {
+    font-size: 1.15em;
+    font-weight: bold;
+}
+.lbexChapterLevelOLCNuclear {
+    font-size: 1em;
+}
+.lbexChapterLevelOLCBoldNuclear {
+    font-size: 1em;
+    font-weight: bold;
+}
+.lbexSectionLevelOLCnuclear {
+    word-spacing: 2pt;
+    letter-spacing: 1pt;
+    font-weight: normal;
+    font-variant: small-caps;
+}
+.lbexSubpartLevelOLC {
+    word-spacing: 2pt;
+    letter-spacing: 1pt;
+    font-variant: normal;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+/*BH:  Adding no space.  Original used 'spans' and 'br' elements to achieve desired space.*/
+.lbexTocSectionOLC {
+    font-size: 80%;
+    /*  BH commenting this out because this is causing a hanging indent. */
+    /*  text-indent: 2em; */
+    margin-left: 2em;
+    margin-top: 0pt;
+    margin-bottom: 0pt;
+}
+.lbexTocDivisionOLC {
+    font-size: 0.7em;
+}
+.lbexTocSubDivisionOLC {
+    font-size: 0.675em;
+    font-variant: small-caps;
+}
+.lbexTocSubTitleOLC {
+    font-variant: normal;
+    font-size: 0.7em;
+}
+.lbexTocSubChapterOLC {
+    font-size: 0.675em;
+}
+.lbexTocSubPartOLC {
+    font-variant: small-caps;
+    font-size: 0.675em;
+}
+.lbexSmallCapTrad {
+    font-variant: small-caps;
+    font-size: 0.75em;
+}
+.lbexSmallCapBackTitle {
+    font-variant: small-caps;
+    font-size: 11pt;
+}
+.lbexInitialCapTrad {
+    word-spacing: 2pt;
+    letter-spacing: 1pt;
+    font-variant: small-caps;
+}
+.lbexInitialCapTradInd {
+    word-spacing: 2pt;
+    letter-spacing: 1pt;
+    font-size: 0.9em;
+    font-variant: small-caps;
+    text-transform: capitalize;
+    text-indent: 2em;
+}
+.lbexLargeCapTrad {
+    font-variant: small-caps;
+    font-size: 1em;
+}
+.lbexSectionTitleTrad {
+    font-variant: small-caps;
+    /*  text-transform: capitalize; */
+}
+.lbexSectionLevelTradBold {
+    font-size: 0.9em;
+}
+.lbexSectionLevelTradBoldUp {
+    font-size: 0.9em;
+    text-transform: uppercase;
+}
+.lbexRepTitle {
+    font-size: 0.9em;
+}
+.lbexTitleLevelTrad {
+    font-size: 1em;
+    font-variant: small-caps;
+}
+.lbexTitleLevelTradIn {
+    font-size: 1.15em;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.lbexTitleLevelTradEx {
+    font-size: 1em;
+    text-transform: uppercase;
+}
+.lbexTitleLevelTradBold {
+    font-size: 1.15em;
+}
+.lbexSubTitleLevelTrad {
+    word-spacing: 2pt;
+    letter-spacing: 1pt;
+    font-size: 1em;
+    font-variant: normal;
+    text-transform: capitalize;
+}
+.lbexSubTitleLevelTradUp {
+    word-spacing: 2pt;
+    letter-spacing: 1pt;
+    font-size: 1em;
+    font-variant: normal;
+    text-transform: uppercase;
+}
+.lbexPartlevelTrad {
+    font-size: 1em;
+    font-variant: small-caps;
+    /*  text-transform: capitalize; */
+}
+.lbexSubPartLevelTradBold {
+    word-spacing: 2pt;
+    letter-spacing: 1pt;
+    font-variant: normal;
+    font-size: 1.15em;
+    text-transform: capitalize;
+}
+.lbexChapterLevelTrad {
+    word-spacing: 2pt;
+    letter-spacing: 1pt;
+    text-transform: uppercase;
+    font-size: 1em;
+    font-weight: bold;
+}
+.lbexSubChapterLevelTrad {
+    word-spacing: 2pt;
+    letter-spacing: 1pt;
+    font-variant: small-caps;
+    text-transform: capitalize;
+    font-size: 1em;
+}
+.lbexSubChapterLevelTradEx {
+    word-spacing: 2pt;
+    letter-spacing: 1pt;
+    text-transform: uppercase;
+    font-size: 1em;
+}
+.lbexSubChapterLevelTradInline {
+    word-spacing: 2pt;
+    letter-spacing: 1pt;
+    font-variant: small-caps;
+    font-size: 1em;
+}
+.lbexSubChapterLevelTradBold {
+    word-spacing: 2pt;
+    letter-spacing: 1pt;
+    font-variant: small-caps;
+    text-transform: capitalize;
+    font-size: 1.15em;
+}
+.lbexTocSectionTrad {
+    font-size: 80%;
+    text-indent: 2em;
+    margin-left: 2em;
+}
+.lbexTocTitleTrad {
+    font-size: 0.7em;
+    font-variant: normal;
+}
+.lbexTocChapterTrad {
+    font-variant: small-caps;
+    text-transform: capitalize;
+    font-size: 0.7em;
+}
+.lbexTocSubchapterTrad {
+    font-variant: normal;
+    font-size: 0.7em;
+}
+.lbexTocPartTrad {
+    font-variant: small-caps;
+    font-size: 0.675em;
+}
+.lbexTocSubPartTrad {
+    font-variant: normal;
+    font-size: 0.675em;
+    line-height: 1.25em;
+}
+
+.lbexSectionLevelIRCEx {
+    font-size: 0.8em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.lbexTitleLevelIRCEx {
+    font-size: 1.15em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.lbexSubTitleLevelIRCBold {
+    word-spacing: 2pt;
+    letter-spacing: 1pt;
+    font-variant: normal;
+    font-size: 1.4em;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+.lbexChapterLevelIRCEx {
+    font-size: 1em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.lbexPartLevelIRCEx {
+    font-size: 0.9em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.lbexTocSectionIRCTax {
+    font-size: 0.7em;
+    font-variant: normal;
+    text-transform: capitalize;
+}
+.lbexTocSectionIRCBold {
+    font-size: 0.75em;
+}
+.lbexTocBigCapsLowCapsIRC {
+    font-size: 0.7em;
+    font-variant: small-caps;
+    text-transform: capitalize;
+}
+.lbexTocBigCapsLowCapsIRCBold {
+    font-size: 0.75em;
+    font-variant: small-caps;
+    text-transform: capitalize;
+}
+.lbexTocPartIRCBold {
+    font-variant: normal;
+    text-transform: capitalize;
+    font-size: 0.75em;
+}
+.lbexInitialCapUSC {
+    font-variant: small-caps;
+    font-size: 0.9em;
+    text-transform: uppercase;
+}
+/* .dot-leader {
+    vertical-align: bottom;
+    background-image: url(dot_line1.gif);
+    background-repeat: repeat-x;
+    background-position: bottom;
+} */
+.dot-leader {
+    max-width:          40em;
+    padding:            0em;
+    baseline-shift:     0;
+    overflow-x:         hidden;
+    list-style:         none;
+}
+.dot-leader span:after {
+    display:            inline-flex;
+    float:              left;
+    width:              0em;
+    baseline-shift:     0;
+    white-space:        nowrap;
+    content:
+       "\0000a0\0000a0\0000a0\0000a0. . . . . . . . . . . . . . . . . . . . "
+       ". . . . . . . . . . . . . . . . . . . . "
+       ". . . . . . . . . . . . . . . . . . . . "
+       ". . . . . . . . . . . . . . . . . . . . "
+}
+.dot-leader span:first-child {
+    padding-right:      0.33em;
+    background:         white;
+}
+.td {
+    font-size: 90%;
+}
+.lbexCalendarOLC {
+    font-size: 1.5em;
+    font-weight: bold;
+    letter-spacing: -1pt;
+}
+.lbexHangTable {
+    text-indent: -3em;
+    font-size: 0.675em;
+}
+
+.lbexEndsmtHead {
+    font-size: 0.75em;
+    font-weight: bold;
+}
+.lbexEndsmtSimpleCap {
+    font-size: 0.675em;
+    font-variant: small-caps;
+}
+.lbexSmtlegisNum {
+    font-size: 1.75em;
+    font-weight: bold;
+}
+.lbexSmtlegisNumAvg {
+    font-size: 1.75em;
+    font-weight: bold;
+    letter-spacing: -2pt;
+    text-transform: uppercase;
+}
+.lbexSmtlegisNumlrg {
+    font-size: 1.75em;
+    font-weight: bold;
+    letter-spacing: -3pt;
+    text-transform: uppercase;
+}
+.lbexEnumUcs {
+    word-spacing: -3pt;
+}
+.lbexBold {
+    font-weight: bold;
+}
+.lbexBoldLrge {
+    font-weight: bold;
+    font-size: 0.9em;
+}
+.lbexBrakets {
+    font-size: 1em;
+    font-weight: bold;
+    font-family: Arial;
+}
+.lbexAttest {
+    font-size: 0.8em;
+}
+.lbexHeaderAppropMajor {
+    font-size: 1.15em;
+    text-transform: uppercase;
+    font-weight: normal;
+}
+.lbexHeaderAppropMajorItalic {
+    font-size: 1.15em;
+    text-transform: uppercase;
+    font-style: italic;
+    font-weight: normal;
+}
+.lbexHeaderAppropIntermediate {
+    font-size: 1.15em;
+    font-variant: small-caps;
+}
+.lbexHeaderAppropIntermediateItalic {
+    font-size: 1.15em;
+    font-variant: small-caps;
+    font-style: italic;
+}
+.lbexHeaderAppropSmall {
+    font-size: 0.8em;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+.lbexHeaderAppropSmallItalic {
+    font-size: 0.8em;
+    font-weight: normal;
+    text-transform: uppercase;
+    font-style: italic;
+}
+.lbexAllNormal {
+    font-variant: normal;
+    text-transform: lowercase;
+}
+.lbexVotesStyle {
+    font-family: 'Arial Narrow';
+}
+.lbexSmallText {
+    font-size: 0.75em;
+}
+.lbexSmallTextNormal {
+    font-size: 0.75em;
+    text-transform: none;
+    font-variant: normal;
+}
+.lbexTextNormal {
+    text-transform: none;
+    font-variant: normal;
+}
+.lbexBlack
+{
+    color: black;
+}
+.lbexListStyle
+{
+    list-style-type: lower-alpha;
+}
+.lbexTextStrikethrough
+{
+    text-decoration: line-through;
+}
+
+.lbexBlockNeutral
+{
+    text-decoration: none;
+    display: block;
+}
+
+.lbexTextNeutral
+{
+    text-decoration: none;
+    display: inline-block;
+    margin-left: inherit;
+}
+
+.lbexTextNeutralInline
+{
+    text-decoration: none;
+    display: inline-block;
+}
+
+.lbexTableStyleOne
+{
+    width: 100%;
+    text-align: left;
+}
+.lbexTableStyleTwo
+{
+    width: 70%;
+}
+.lbexTableStyleThree
+{
+    width: 12%;
+    height: 50px;
+    text-align: right;
+}
+.lbexTableStyleFour
+{
+    width: 25%;
+    height: 50px;
+    text-align: right;
+}
+.lbexTableStyleFive
+{
+    width: 80%;
+    border-style: solid;
+    border-width: thin;
+    border-color: gray;
+}
+.lbexTableStyleSix
+{
+    width: 25%;
+    height: 50px;
+    text-align: left;
+}
+.lbexTableStyleSeven
+{
+    width: 80%;
+    font-size: 14pt;
+}
+.lbexTableStyleEight
+{
+    width: 90%;
+    font-size: 0.9em;
+}
+
+.lbexTableStyleEight {
+    width: 80%;
+    font-size: 0.75em;
+}
+
+.lbexTableStyleEnr
+{
+    width: 100%;
+    border-style: solid;
+    border-width: medium;
+    border-color: #CC0000;
+    padding: 30px;
+}
+.lbexReportCoverTableTop
+{
+    border-bottom-style: solid;
+    border-bottom-width: thin;
+    border-bottom-color: gray;
+}
+.lbexTdStyleOne
+{
+    width: 3%;
+    text-align: right;
+}
+.lbexTdStyleTwo
+{
+    width: 10%;
+    text-align: right;
+}
+.lbexTdStyleThree
+{
+    width: 25%;
+    text-align: left;
+}
+.lbexTdStyleFour
+{
+    width: 6%;
+    text-align: center;
+}
+.lbexTdStyleFourStAlone
+{
+    width: 12%;
+    text-align: center;
+}
+.lbexTdStyleSix
+{
+    width: 50%;
+    text-align: right;
+}
+.lbexTdStyleSeven
+{
+    width: 6%;
+}
+.lbexGeneralStyle100
+{
+    width: 100%;
+}
+P.lbexBreakHere {
+    page-break-before: always
+}
+body.lbexBody {
+    font-size: 0.9em;
+    margin-left: 40pt;
+    margin-right: 40pt;
+}
+
+ul.leaders
+{
+    padding: 0px;
+}
+
+ul.leaders li
+{
+    display: table;
+}
+
+ul.leaders li span
+{
+    display: table-cell;
+}
+
+ul.leaders li span:first-child
+{ /* TITLE */
+    position: relative;
+    overflow: hidden; /* Don't go underneath the page number */
+}
+
+ul.leaders li span:first-child:after
+{ /* DASHES */
+    content: "";
+    position: absolute;
+    bottom: 0.5em; /* Set as you want */
+    margin-left: 0.5em; /* Keep same for the next span's left padding */
+    width: 100%;
+    border-bottom: 1px dashed #000;
+}
+
+ul.leaders li span + span
+{ /*page number*/
+    text-align: right;
+    width: 0.01%; /* Trick it */
+    vertical-align: bottom; /* Keep text bottom-aligned */
+    padding-left: 0.5em;
+    text-indent: 0;
+    /* white-space: nowrap;       /* Uncomment if needed */
+}
+.noneTextDecorationBlock {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.noneTextDecorationInline {
+    display: inline-block;
+    text-decoration: none;
+    /*  margin-left: -40px; */
+    margin-top: -20px;
+}
+.normalFontStyleBlock {
+    font-style: normal;
+    font-weight: normal;
+}
+.normalFontStyleInline {
+    font-style: normal;
+    font-weight: normal;
+    margin-left: -0px;
+    margin-top: -20px;
+}
+.lbexSimpleItalic {
+    font-style: italic;
+    font-weight: normal;
+}
+.lbexChapterLevelOLCNuclearIn {
+    font-size: 1em;
+    margin-top: 10px;
+}
+.hidden {
+    display: none;
+}
+
+/* To bypass validation warning in front matter */
+
+.leg-title {
+    font-size: 1em;
+    font-weight: normal;
+    line-height: 1.5em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.paragraphHeading {
+    font-size: 1em;
+    font-weight: normal;
+    line-height: 1.5em;
+    margin-top: 0;
+    margin-bottom: 0;
+    text-indent: 2em;    
+}
+
+.division {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.divisionAppropriations {
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+.title {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.titleAppropriations {
+    font-size: 1.15em;
+    font-weight: normal;
+    line-height: 1.5em;
+}
+
+.chapter {
+    font-size: 1.15em;
+    font-weight: bold;
+}
+
+.subchapterULC {
+    font-size: 1.15em;
+    font-weight: normal;
+}
+
+.part {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.sectionOLC {
+    font-size: 0.8em;
+    font-weight: bold;
+    line-height: 1.5em
+}
+
+.bodyIndent {
+    font-size: 1em;
+    font-weight: normal;
+    text-indent: 2em;
+}
+
+.bodyNoIndent {
+    font-size: 1em;
+    font-weight: normal;
+    text-indent: 0;
+}
+
+.smallCapsLower {
+    font-size: 1em;
+    font-variant: small-caps;
+    text-transform: lowercase;
+}
